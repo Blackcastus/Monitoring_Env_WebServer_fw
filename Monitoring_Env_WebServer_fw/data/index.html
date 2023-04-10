@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<style>
+    html {
+        font-family: Arial;
+        display: inline-block;
+        margin: 0px auto;
+        text-align: center;
+    }
+
+    h1 {
+        color: #070812;
+        padding: 2vh;
+    }
+
+    .button {
+        display: inline-block;
+        border-radius: 15px;
+        background-color: none;
+        padding: 15px 40px;
+        cursor: pointer;
+    }
+
+    .button:hover {
+        box-shadow: 0 12px 16px 0 rgba(18, 134, 57, 0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+
+    .button:active {
+        background-color: #fa0f0f;
+        transform: translateY(2px);
+    }
+
+    .content {
+        padding: 50px;
+    }
+
+    .card-grid {
+        max-width: 200px;
+        margin: 0 auto;
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .card_temp {
+        background-color: rgb(189, 49, 135);
+        border-style: outset;
+        border-radius: 15px;
+        box-shadow: 2px 2px 12px 1px rgba(140, 140, 140, .5);
+    }
+
+    .card_humi {
+        background-color: rgb(23, 108, 179);
+        border-style: outset;
+        border-radius: 15px;
+        box-shadow: 2px 2px 12px 1px rgba(140, 140, 140, .5);
+    }
+
+    .card_button {
+        background-color: rgb(209, 220, 230);
+        border-style: outset;
+        border-radius: 30px;
+        box-shadow: 2px 2px 12px 1px rgba(140, 140, 140, .5);
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #034078
+    }
+</style>
+
+<head>
+    <title>ESP32 WEB SERVER</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="5">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<body>
+    <h2>MONITOR ENVRONMENT WEB SERVER</h2>
+    <div class="content">
+        <div class="card-grid">
+            <div class="card-grid card_temp">
+                <p>
+                    <i class="fas fa-thermometer-half" style="color:#17c44b;"></i> Temperature: <strong> %s </strong>
+                </p>
+            </div>
+            <div class="card-grid card_humi">
+                <p>
+                    <i class="fas fa-tint" style="color:#06267c;"></i> Humidity: <strong> %s </strong>
+                </p>
+            </div>
+            <div class="card-grid card_button">
+
+                <p>
+                    <i class="fas fa-lightbulb fa-2x" style="color:#a80e1b;"></i>
+                    <a href="/lighton"><button id="button" class="button">Light</button></a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
